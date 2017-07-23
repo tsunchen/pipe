@@ -1,0 +1,39 @@
+有名管道的探究
+import os
+import time
+
+P_Name = './pipe'
+if (os.access(P_Name, os.F_OK) == False):
+        os.mkfifo(P_Name)
+print "before read open"
+fp_r = open(P_Name, 'r')
+print "end read open"
+
+while(True):
+        msg = fp_r.read(1)
+        print msg
+        if (msg == 'q'):
+                break
+
+fp_r.close()
+~
+
+import os
+import time
+
+P_Name = './pipe'
+if (os.access(P_Name, os.F_OK) == False):
+        os.mkfifo(P_Name)
+print "before write open"
+fp_w = open(P_Name, 'w')
+print "end write open"
+
+msg = ''
+while (True):
+        msg = raw_input(">")
+        fp_w.write(msg)
+        fp_w.flush()
+        if (msg == 'q'):
+                break
+fp_w.close()
+~
