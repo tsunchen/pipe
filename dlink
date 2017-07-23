@@ -1,0 +1,25 @@
+双线配置的改变思路
+1. 网卡ip地址配置(traditional ways!)
+2. centos7_bilinks.txt文件下载后，修改方框内的双线参数：
+
+Last login: Thu Jul 13 07:52:01 2017 from 112.64.216.107
+[root@tsunc ~]# wget http://zadmine.com/ftp/Tips/configuration/centos7/centos7_bilinks.txt
+--2017-07-14 02:06:21--  http://zadmine.com/ftp/Tips/configuration/centos7/centos7_bilinks.txt
+Resolving zadmine.com (zadmine.com)... 50.62.160.81
+Connecting to zadmine.com (zadmine.com)|50.62.160.81|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1015 [text/plain]
+Saving to: 'centos7_bilinks.txt'
+
+100%[======================================>] 1,015       --.-K/s   in 0s      
+
+2017-07-14 02:06:26 (351 MB/s) - 'centos7_bilinks.txt' saved [1015/1015]
+
+tel_ipaddr=[211.152.4.25]
+tel_gw=[211.152.4.1]
+dev_tel=[em1]
+cnc_ipaddr=[203.166.81.25]
+cnc_gw=[203.166.81.1]
+dev_cnc=[em2]
+
+保存后，执行centos7_bilinks，测试。
